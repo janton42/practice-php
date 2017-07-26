@@ -1,37 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" lang="en">
-	<title>Jeff Stock</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script src="https://use.fontawesome.com/382d19b8cb.js"></script>
-</head>
-
-<body>
-	<header id="about">
-		<nav>
-			<a href="#about"><i class="fa fa-home" aria-hidden="true"></i></a>		
-			<a href="#intpeople"><i class="fa fa-archive" aria-hidden="true"></i></a>
-			<a href="#intro"><i class="fa fa-info" aria-hidden="true"></i></a>
-			<a href="#work"><i class="fa fa-building" aria-hidden="true"></i></a>
-			<a href="#edu"><i class="fa fa-graduation-cap" aria-hidden="true"></i></a>
-			<a href="#contact"><i class="fa fa-address-card" aria-hidden="true"></i></a>			
-		</nav>
-
-		<div class="container">
-			<img class="heading-img col-narrow" src="images/beer.jpg">
-				<div class="col-wide">
-					<h1>Welcome</h1>
-					<h2>subheading</h2>					
-				</div>
-		</div>
-
-	</header>
+<?php include("../includes/layouts/header.php") ?>
 
 	<main>
 
 		<div id="intpeople">
-			<h3>Section 1</h3>
+			<h3>Pow!</h3>
 			<div class="container">
 					<div id="peoplebox">
 						<a href="#" id="prev_btn">&laquo;</a>
@@ -78,30 +50,7 @@
 		</div>
 	</main>
 
-	<footer id="contact">
-		<h4>Let's connect!</h4>
-		<a href=""><i class="fa fa-github" aria-hidden="true"></i></a>
-		<a href="https://twitter.com/antonbirzha"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-		<a href="https://www.facebook.com/jeff.stock1"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-		<a href="http://www.linkedin.com/in/stockj"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-		<!-- <a href="" style="float:right;"><i class="fa fa-lock" aria-hidden="true"></i></a> -->
-	</footer>
-
-	<script src="js/script.js" type="text/javascript"></script>
-
-	<script id="peopletpl" type="text/template">
-		{{#people}}
-			<div class="person">
-				<h4><img src="images/{{shortname}}_tn.jpg" alt="Photo of {{name}}" class="flow-left">{{name}}</h3>
-				<h5>{{reknown}}</h4>
-				<p>{{bio}}</p>
-			</div>
-		{{/people}}
-	</script>
-
-</body>
-</html>
-
+<?php include("../includes/layouts/footer.php") ?>
 
 
 
