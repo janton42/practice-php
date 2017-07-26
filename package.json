@@ -3,16 +3,26 @@
   "version": "0.0.1",
   "description": "A biographical website from scratch using WAMP, HTML, CSS and JavaScript",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
-    "url": "?.git"
+    "url": "https://github.com/janton42/homepage.git"
   },
   "author": "Jeff Stock",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-html": "^1.0.6",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "jquery-cycle": "^3.0.3",
+    "mustache": "^2.3.0"
   }
 }
