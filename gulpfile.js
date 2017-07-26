@@ -23,7 +23,10 @@ if(env==="dev") {
 	outputDir = "builds/prod/public/";
 }
 
-jsSources = ["components/scripts/*js"];
+jsSources = [
+"components/scripts/jquery.js",
+"components/scripts/carousel.js"
+];
 htmlSources = [outputDir + "*html"];
 jsonSources = [outputDir + "js/*json"];
 styleSources = [outputDir + "css/*css"];
@@ -66,7 +69,7 @@ gulp.task("style", function() {
 gulp.task("watch", function() {
 	gulp.watch(styleSources, ["style"]);
 	gulp.watch(jsSources, ["js"]);
-	gulp.watch("builds/dev/public/js/*html", ["html"]);
+	gulp.watch("builds/dev/public/*html", ["html"]);
 	gulp.watch(jsonSources, ["json"]);
 });
 
