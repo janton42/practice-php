@@ -5,9 +5,11 @@ var gulp = require("gulp"),
 	gulpif = require("gulp-if"),
 	minifyHTML = require("gulp-minify-html"),
 	uglify = require("gulp-uglify"),
-	gutil = require("gulp-util");
+	gutil = require("gulp-util"),
+	compass = require("gulp-compass");
 
 var env,
+	sassSources,
 	jsSources,
 	htmlSources,
 	jsonSources,
@@ -22,9 +24,9 @@ if(env==="dev") {
 }
 
 jsSources = ["components/scripts/*js"];
-htmlSources = [outputDir + "js/*html"];
+htmlSources = [outputDir + "*html"];
 jsonSources = [outputDir + "js/*json"];
-styleSources = ["css/style.css"];
+styleSources = [outputDir + "css/*css"];
 
 gulp.task("js", function() {
 	gulp.src(jsSources)
@@ -56,20 +58,16 @@ gulp.task("json", function() {
 	.pipe(connect.reload())
 });
 
-gulp.task("css", function() {
+gulp.task("style", function() {
 	gulp.src(styleSources)
-	.pipe(concat("style.css"))
-	.pipe(browserify())
-	.pipe(gulp.dest(outputDir + "css"))
-	.on("error", gutil.log)
 	.pipe(connect.reload())
-})
+});
 
 gulp.task("watch", function() {
-	gulp.watch(styleSources, ["css"]);
+	gulp.watch(styleSources, ["style"]);
 	gulp.watch(jsSources, ["js"]);
 	gulp.watch("builds/dev/public/js/*html", ["html"]);
 	gulp.watch(jsonSources, ["json"]);
 });
 
-gulp.task("default", ["html", "json", "js", "connect", "watch"]);
+gulp.task("default", ["html", "json", "js", "style", "connect", "watch"]);
