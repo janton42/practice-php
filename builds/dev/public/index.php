@@ -48,6 +48,8 @@
 					</p>	
 			</div>	
 		</div>
+
+		
 	</main>
 
 <?php include("../includes/layouts/footer.php") ?>
