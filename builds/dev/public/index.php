@@ -5,10 +5,7 @@
 <?php include("../includes/layouts/header.php") ?>
 
 	<main>
-
-	<!-- pull content from sections -->
 	<?php echo section_view() ;?>
-
 		
 	</main>
 

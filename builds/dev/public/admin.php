@@ -36,7 +36,14 @@
 			</div>
 		</div>
 
-<!-- 		<div id=\"work\"><h3>Section 3</h3><div class=\"container\"><p>Sed ut perspiciatis unde</p></div></div>-->		
+ 		<div id=\"work\">
+ 			<h3>Section 3</h3>
+ 				<div class=\"container\">
+ 					<p>
+ 						Sed ut perspiciatis unde
+ 					</p>
+ 				</div>
+ 		</div>		
 		<div id="edu">
 			<h3>Section 4</h3>
 			<div class="container">
@@ -50,7 +57,7 @@
 	<div id="create">
 		<h3>Manage Content</h3>
 		<div class="container">
-			+<a href="">New Section</a>
+			+<a href="create_section.php">New Section</a>
 			<br>
 			+<a href="">New page</a>
 		</div>
@@ -64,6 +71,7 @@
 			+<a href="">New page</a>
 		</div>
 	</div>
+
 </main>
 
 <?php include("../includes/layouts/footer.php") ;?>
