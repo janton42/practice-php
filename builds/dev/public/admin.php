@@ -54,6 +54,8 @@
 		</div>
 	</div>
 
+	<?php echo section_view() ?>
+
 	<div id="create">
 		<h3>Manage Content</h3>
 		<div class="container">
