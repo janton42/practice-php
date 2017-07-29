@@ -68,7 +68,7 @@
 					Visible:
 					<input type="radio" name="visible" value="0" <?php if ($current_section["visible"] == 0) {echo "checked";} ?> > No
 					&nbsp;
-					<input type="radio" name="visible" value="1" <?php if ($current_section["visible"] == 0) {echo "checked";} ?>> Yes
+					<input type="radio" name="visible" value="1" <?php if ($current_section["visible"] == 1) {echo "checked";} ?>> Yes
 				</p>
 				<p>
 					Content:
@@ -77,6 +77,8 @@
 					<textarea name="content" rows="10" columns="150"><?php echo htmlentities($current_section["content"]); ?></textarea>
 				</p>
 				<input type="submit" name="submit" value="Update section">
+				<br>
+				<a href="delete_section.php">delete section</a>
 				<br>
 				<a href="admin.php">Cancel</a>
 			</form>
