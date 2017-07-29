@@ -15,19 +15,22 @@
 	validate_max_lengths($fields_with_max_lengths);
 
 		if(empty($errors)) {
+			$id = $current_section["id"];
 			$title = mysql_prep($_POST["title"]);
 			$position = (int)$_POST["position"];
 			$visible = (int)$_POST["visible"];
 			$content = mysql_prep($_POST["content"]);
 
 			$query = "UPDATE sections SET ";
-			$query .= "title = '{title}' ";
-			$query .= "position = {position} ";
-			$query .= "visible = {visible}";
-			$query .= "content = '{content}'";
+			$query .= "title = '{$title}', ";
+			$query .= "position = {$position}, ";
+			$query .= "visible = {$visible}, ";
+			$query .= "content = '{$content}' ";
+			$query .= "WHERE id = {$id} ";
+			$query .= "LIMIT 1";
 			$result = mysqli_query($connection, $query);
 
-			if($result) {
+			if($result && mysqli_affected_rows($connection) >= 0) {
 				$_SESSION["message"] = "Section updated!";
 				redirect_to("admin.php");
 			} else {
@@ -52,8 +55,9 @@
 				<p>Title:
 					<input type="text" name="title" value="<?php echo htmlentities($current_section["title"]); ?>">
 				</p>
+				<p>Current Position: <?php echo htmlentities($current_section["position"]); ?></p>
 				<p>
-					Position:
+					New Position:
 					<select name="position">
 						<?php 
 							$section_set = find_all_sections();
@@ -62,7 +66,7 @@
 								echo "<option value=\"{$count}\">{$count}</option>";
 							}
 						?>
-					</select>
+					 </select>
 				</p>
 				<p>
 					Visible:
@@ -78,7 +82,7 @@
 				</p>
 				<input type="submit" name="submit" value="Update section">
 				<br>
-				<a href="delete_section.php">delete section</a>
+				<a href="delete_section.php?section=<?php echo urldecode($current_section["id"]); ?>" onclick="return confirm('Are you sure?')">delete section</a>
 				<br>
 				<a href="admin.php">Cancel</a>
 			</form>

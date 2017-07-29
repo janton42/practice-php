@@ -6,6 +6,7 @@
 <?php include("../includes/layouts/header.php"); ?>
 
 <main>
+	<?php echo message(); ?>
 	<div>
 		<div id="intpeople">
 			<h3>Pow!</h3>
