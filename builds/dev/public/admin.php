@@ -73,6 +73,7 @@
 			<br>
 			+<a href="select_admin.php">Manage Admins</a>
 		</div>
+	<a href="logout.php">logout</a>
 	</div>
 
 </main>
