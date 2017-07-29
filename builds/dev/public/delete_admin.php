@@ -3,21 +3,20 @@
 <?php require_once("../includes/functions.php"); ?>
 
 <?php
-	$testvar = 42;
-	$current_section = find_selected_section($_GET["id"]);
-	if(!$current_section) {
+	$current_admin = find_selected_admin($_GET["id"]);
+	if(!$current_admin) {
 		$_SESSION["message"] = "You done fucked up again...";
 		redirect_to("admin.php");
 	}
 
-	$id = $current_section["id"];
-	$query = "DELETE FROM sections WHERE id = {$id} LIMIT 1";
+	$id = $current_admin["id"];
+	$query = "DELETE FROM admins WHERE id = {$id} LIMIT 1";
 	$result = mysqli_query($connection, $query);
 
 	if($result && mysqli_affected_rows($connection) == 1) {
-		$_SESSION["message"] = "Section deleted!";
+		$_SESSION["message"] = "Admin $current_admin deleted!";
 		redirect_to("admin.php");
 	} else {
-		$_SESSION["message"] = "Section not deleted. Section id: $current_section";
+		$_SESSION["message"] = "Admin not deleted. Admin id: $current_admin";
 		redirect_to("admin.php");
 	}
