@@ -29,7 +29,7 @@
 			$result = mysqli_query($connection, $query);
  
 			if($result){
-				$_SESSION["message"] = "Admin $username created";
+				$_SESSION["message"] = "Admin $username created!";
 				redirect_to("admin.php");
 			} else {
 				$_SESSION["message"] = "Failed to create admin $username";
