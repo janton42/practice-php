@@ -69,7 +69,7 @@
 	<div id="create">
 		<h3>Manage Admins</h3>
 		<div class="container">
-			+<a href="">New Admin</a>
+			+<a href="create_admin.php">New Admin</a>
 			<br>
 			+<a href="">New page</a>
 		</div>
