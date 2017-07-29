@@ -61,7 +61,7 @@
 		<div class="container">
 			+<a href="create_section.php">New Section</a>
 			<br>
-			+<a href="">New page</a>
+			+<a href="select_section.php">Edit Section</a>
 		</div>
 	</div>
 
