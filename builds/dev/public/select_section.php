@@ -7,5 +7,7 @@
 <?php include("../includes/layouts/header.php"); ?>
 
 <?php echo select_section(); ?>
+<br>
+<a href="admin.php">Cancel</a>
 
 <?php include("../includes/layouts/footer.php") ;?>

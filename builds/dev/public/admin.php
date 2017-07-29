@@ -71,7 +71,7 @@
 		<div class="container">
 			+<a href="create_admin.php">New Admin</a>
 			<br>
-			+<a href="">New page</a>
+			+<a href="select_admin.php">Manage Admins</a>
 		</div>
 	</div>
 

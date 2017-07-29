@@ -8,4 +8,6 @@
 
 <?php echo select_admin(); ?>
 
+<br>
+<a href="admin.php">Cancel</a>
 <?php include("../includes/layouts/footer.php") ;?>
