@@ -4,20 +4,19 @@
 <?php require_once("../includes/validation_functions.php"); ?>
 
 
-
 <?php include("../includes/layouts/header.php"); ?>
 
 <?php 
-	if(isset($_POST["submit"])); {
+	if(isset($_POST["submit"])) {
 	
 		$required_fields = array("username", "password");
 		validate_presences($required_fields);
 
-		$fields_with_max_length = has_max_length($username => 30);
+		$fields_with_max_length = array("username" => 30);
 		validate_max_lengths($fields_with_max_length);
 		
 
-		if(empty($errors)); {
+		if(empty($errors)) {
 
 			$username = mysql_prep($_POST["username"]);
 			$hashed_password = password_encrypt($_POST["password"]);
@@ -25,7 +24,7 @@
 			$query = "INSERT INTO admins(";
 			$query .= "username, hashed_password";
 			$query .= ") VALUES (";
-			$query .= "'{$username}', {$hashed_password}"
+			$query .= "'{$username}', {$hashed_password}";
 			$query .= ")";
 			$result = mysqli_query($connection, $query);
  
@@ -34,11 +33,10 @@
 				redirect_to("admin.php");
 			} else {
 				$_SESSION["message"] = "Failed to create admin $username";
-			}
-
-		}
+				}
+			}	
 	} else {
-		//probably a $_GET request
+
 	}
 
 ?>
@@ -48,12 +46,15 @@
 	<?php echo form_errors();?>
 	<div class="container">
 		<form action="create_admin.php" method="post">
-			<input type="username" name="username" value="">
-			&nbsp;
-			<input type="password" name="password" value="">
+			Username:
+			<input type="text" name="username" value="">
+			<br>
+			Password:
+			&nbsp;<input type="password" name="password" value="">
+			<br>
+			<input type="submit" name="submit" value="Create Admin">
 		</form>
-		<input type="submit" name="Create Admin">
-		&nbsp;
+		<br>
 		<a href="admin.php">Cancel</a>	
 	</div>
 </main>
