@@ -3,7 +3,11 @@
 <?php require_once("../includes/functions.php"); ?>
 <?php require_once("../includes/validation_functions.php"); ?>
 
-<?php find_selected_admin(); ?>
+<?php find_selected_admin();
+	if(!$current_admin) {
+		$_SESSION["message"] = "No admin selected";
+		redirect_to("admin.php");
+		} ?>
 
 <?php 
 	if(isset($_POST["submit"])) {
@@ -16,22 +20,22 @@
 		
 
 		if(empty($errors)) {
-
+			$id = $current_admin["id"];		
 			$username = mysql_prep($_POST["username"]);
 			$hashed_password = password_encrypt($_POST["password"]);
 
 			$query = "UPDATE admins SET ";
 			$query .= "username = '{$username}', ";
-			$query .= "hashed_password = {$hashed_password}, ";
+			$query .= "hashed_password = '{$hashed_password}' ";
 			$query .= "WHERE id = {$id} ";
 			$query .= "LIMIT 1";
 			$result = mysqli_query($connection, $query);
-
+			
 			if($result && mysqli_affected_rows($connection) >= 0) {
 				$_SESSION["message"] = "Admin updated!";
 				redirect_to("admin.php");
 			} else {
-				$_SESSION["message"] = "Admin update failed!";
+				$_SESSION["message"] = "Update failed!";
 			}
 
 		}
@@ -53,7 +57,7 @@
 					<input type="text" name="username" value="<?php echo htmlentities($current_admin["username"]); ?>">
 				</p>
 				<p>Password:
-					<input type="password" name="password">
+					<input type="password" name="password" value="">
 				</p>
 				<input type="submit" name="submit" value="Update admin">
 				<br>
