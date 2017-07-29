@@ -57,7 +57,7 @@
 				</p>
 				<input type="submit" name="submit" value="Update admin">
 				<br>
-				<a href="delete_admin.php?admin=<?php echo urldecode($current_admin["id"]); ?>" onclick="return confirm('Are you sure?')">delete section</a>
+				<a href="delete_admin.php?admin=<?php echo urldecode($current_admin["id"]); ?>" onclick="return confirm('Are you sure?')">delete admin</a>
 				<br>
 				<a href="admin.php">Cancel</a>
 			</form>
