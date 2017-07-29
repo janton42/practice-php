@@ -3,7 +3,7 @@
 <?php require_once("../includes/functions.php"); ?>
 <?php confirm_logged_in(); ?>
 <?php
-	$testvar = 42;
+
 	$current_section = find_selected_section($_GET["id"]);
 	if(!$current_section) {
 		$_SESSION["message"] = "You done fucked up again...";

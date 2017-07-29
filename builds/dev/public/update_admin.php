@@ -44,7 +44,7 @@
 	}
 	
 ?>
-
+<?php $layout_context = check_for_logged_in(); ?>
 <?php include("../includes/layouts/header.php"); ?>
 
 	<main>

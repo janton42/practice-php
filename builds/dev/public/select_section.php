@@ -3,7 +3,7 @@
 <?php require_once("../includes/functions.php"); ?>
 <?php confirm_logged_in(); ?>
 
-
+<?php $layout_context = check_for_logged_in(); ?>
 <?php include("../includes/layouts/header.php"); ?>
 <h3>Choose the form of the destructor!</h3>
 <?php echo select_section(); ?>

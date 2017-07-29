@@ -4,8 +4,6 @@
 <?php require_once("../includes/validation_functions.php"); ?>
 <?php confirm_logged_in(); ?>
 
-<?php include("../includes/layouts/header.php"); ?>
-
 <?php 
 	if(isset($_POST["submit"])) {
 	
@@ -40,6 +38,9 @@
 	}
 
 ?>
+
+<?php $layout_context = check_for_logged_in(); ?>
+<?php include("../includes/layouts/header.php"); ?>
 
 <main>
 	<?php echo message();?>

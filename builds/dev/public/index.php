@@ -1,7 +1,7 @@
 <?php require_once("../includes/db_connect.php"); ?>
 <?php require_once("../includes/functions.php"); ?>
 
-
+<?php $layout_context = check_for_logged_in(); ?>
 <?php include("../includes/layouts/header.php") ?>
 
 	<main>
