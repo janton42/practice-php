@@ -6,6 +6,6 @@
 
 <?php include("../includes/layouts/header.php"); ?>
 
-<?php echo select_section(); ?>
+<?php echo select_admin(); ?>
 
 <?php include("../includes/layouts/footer.php") ;?>
